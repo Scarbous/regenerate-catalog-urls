@@ -87,7 +87,7 @@ class RegenerateProductUrlCommand extends Command
 
         $stores  = $this->storeManager->getStores(false);
 
-        if (!is_numeric($storeId)) {
+        if (is_string($storeId)) {
             $storeId = $this->getStoreIdByCode($storeId, $stores);
         }
 
